@@ -1,10 +1,10 @@
-FROM ubuntu:22.04
+FROM ghcr.io/open-webui/open-webui:main
 
-RUN apt-get update && apt-get install -y proxychains4 curl
+USER root
+
+RUN apt-get update && apt-get install -y proxychains4
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["curl", "https://api.ipify.org"]

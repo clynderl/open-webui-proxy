@@ -13,5 +13,5 @@ proxy_dns
 socks5 $PROXY_IP $PROXY_PORT $PROXY_USER $PROXY_PASS
 EOF
 
-echo "Starting command through proxychains4..."
-exec proxychains4 "$@"
+echo "Starting Open WebUI through SOCKS5 proxy..."
+exec proxychains4 /start.sh
